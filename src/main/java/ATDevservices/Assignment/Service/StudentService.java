@@ -1,5 +1,6 @@
 package ATDevservices.Assignment.Service;
 import ATDevservices.Assignment.Model.Student;
+import ATDevservices.Assignment.Repository.PlayerRepository;
 import ATDevservices.Assignment.Repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,6 +9,11 @@ import org.springframework.stereotype.Service;
 public class StudentService {
     @Autowired
     private StudentRepository studentRepository;
+
+    @Autowired
+    private PlayerRepository playerreposotory;
+
+
 
     public Student save(Student student){
         return studentRepository.save(student);

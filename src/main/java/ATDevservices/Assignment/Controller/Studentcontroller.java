@@ -1,5 +1,7 @@
 package ATDevservices.Assignment.Controller;
+import ATDevservices.Assignment.Model.Player;
 import ATDevservices.Assignment.Model.Student;
+import ATDevservices.Assignment.Repository.PlayerRepository;
 import ATDevservices.Assignment.Service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,6 +13,13 @@ import org.springframework.web.bind.annotation.*;
 public class Studentcontroller {
     @Autowired
     private StudentService studentservice;
+
+    @Autowired
+     private PlayerRepository playerRepository;
+
+    public void createpl(Player player){
+
+    }
 
     @GetMapping("/find")
     public Student find(@RequestBody Student student){
