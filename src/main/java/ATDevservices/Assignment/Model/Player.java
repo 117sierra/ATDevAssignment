@@ -1,8 +1,9 @@
 package ATDevservices.Assignment.Model;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
-
 @Getter
 @Setter
 @NoArgsConstructor
@@ -10,24 +11,15 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @Entity
-public class Student {
+public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
-    @Column(length = 30)
     private String name;
-
-    @Column(length = 30)
-    private String address;
-
-    @Column(nullable = false,unique = true)
-    private String contact;
-
-    @Column(length = 30, unique = true)
-    private String email;
-
-
-
+    @Column(nullable = false)
+    private String dateOfBirth;
+    @ManyToOne
+    @JoinColumn
+    @JsonIgnoreProperties("player")
+    private Match match;
 }
-
